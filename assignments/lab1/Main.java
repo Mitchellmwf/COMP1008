@@ -42,8 +42,28 @@ public class Main {
  
  
         // TODO: Prompt user and read input
+        System.out.print("Enter today's weather conditions(String): ");
+        weatherConditions = input.nextLine();
+        System.out.print("Enter possibility of precipitation(String): ");
+        precipitation = input.nextLine();
+        System.out.print("Enter wind speed (km/h)(String): ");
+        windSpeed = input.nextLine();
+        System.out.print("Enter daily high temperature(Double): ");
+        highTemp = input.nextDouble();
+        System.out.print("Enter daily low temperature(Double): ");
+        lowTemp = input.nextDouble();
+        System.out.print("Enter UV index(Int): ");
+        uvIndex = input.nextInt();
+
         // TODO: Use loops to validate high/low temperatures and UV index
- 
+        while (lowTemp > highTemp) {
+            System.out.println("Low temp can't be higher than high temp. Please re-enter low temperature:");
+            lowTemp = input.nextDouble();
+        }
+        while (uvIndex < 0 || uvIndex > 14) {
+            System.out.println("UV Index must be between 0 and 14. Please re-enter UV index:");
+            uvIndex = input.nextInt();
+        }
  
         /*
         STEP 3: Typecasting (if needed)
