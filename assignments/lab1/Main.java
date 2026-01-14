@@ -29,8 +29,8 @@ public class Main {
         String weatherConditions;
         String precipitation;
         String windSpeed;
-        double highTemp;
-        double lowTemp; 
+        int highTemp;
+        int lowTemp; 
         int uvIndex;
  
         /*
@@ -48,17 +48,17 @@ public class Main {
         precipitation = input.nextLine();
         System.out.print("Enter wind speed (km/h)(String): ");
         windSpeed = input.nextLine();
-        System.out.print("Enter daily high temperature(Double): ");
-        highTemp = input.nextDouble();
-        System.out.print("Enter daily low temperature(Double): ");
-        lowTemp = input.nextDouble();
+        System.out.print("Enter daily high temperature(Int): ");
+        highTemp = input.nextInt();
+        System.out.print("Enter daily low temperature(Int): ");
+        lowTemp = input.nextInt();
         System.out.print("Enter UV index(Int): ");
         uvIndex = input.nextInt();
 
         // TODO: Use loops to validate high/low temperatures and UV index
         while (lowTemp > highTemp) {
             System.out.println("Low temp can't be higher than high temp. Please re-enter low temperature:");
-            lowTemp = input.nextDouble();
+            lowTemp = input.nextInt();
         }
         while (uvIndex < 0 || uvIndex > 14) {
             System.out.println("UV Index must be between 0 and 14. Please re-enter UV index:");
@@ -91,7 +91,7 @@ public class Main {
         if (Integer.parseInt(precipitation.replace("%", "")) >= 50) {
             System.out.println("Carry an umbrella.");
         }
-        if (Integer.parseInt(windSpeed.replace(" km/h", "")) > 40) {
+        if (Integer.parseInt(windSpeed.replace("km/h", "")) > 40) {
             System.out.println("Windy conditions.");
         }
  
@@ -104,8 +104,7 @@ public class Main {
  
  
         // TODO: Construct your full weather report here
-        String report = String.format("Today's weather conditions:" + weatherConditions + "\nPossibility of precipitation: " + precipitation + "\nWind speed: " + windSpeed + "\nDaily high temperature: " + highTemp + "\nDaily low temperature: " + lowTemp + "\nUV index: " + uvIndex);
- 
+         String report = "\nToday's weather conditions: " + weatherConditions + "\n" + "Possibility of precipitation: " + precipitation + "\n" + "Wind speed: " + windSpeed + "\n" + "Daily high temperature: " + highTemp + "\n" + "Daily low temperature: " + lowTemp + "\n" +"UV index: " + uvIndex;
         /*
         STEP 6: Print the full weather report
         */
@@ -122,7 +121,7 @@ public class Main {
  
  
         // TODO: Implement loop for multiple reports
- 
+        
  
         input.close();
     }
