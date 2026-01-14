@@ -25,9 +25,13 @@ public class Main {
         f) UV index (int)
         */
  
- 
         // TODO: Declare your variables here
- 
+        String weatherConditions;
+        String precipitation;
+        String windSpeed;
+        double highTemp;
+        double lowTemp; 
+        int uvIndex;
  
         /*
         STEP 2: Get input from the user using Scanner
