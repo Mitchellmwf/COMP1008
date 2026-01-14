@@ -44,9 +44,9 @@ public class Main {
         // TODO: Prompt user and read input
         System.out.print("Enter today's weather conditions(String): ");
         weatherConditions = input.nextLine();
-        System.out.print("Enter possibility of precipitation(String): ");
+        System.out.print("Enter possibility of precipitation (#%)(String): ");
         precipitation = input.nextLine();
-        System.out.print("Enter wind speed (km/h)(String): ");
+        System.out.print("Enter wind speed (#km/h)(String): ");
         windSpeed = input.nextLine();
         System.out.print("Enter daily high temperature(Int): ");
         highTemp = input.nextInt();
