@@ -104,7 +104,7 @@ public class Main {
  
  
         // TODO: Construct your full weather report here
- 
+        String report = String.format("Today's weather conditions:" + weatherConditions + "\nPossibility of precipitation: " + precipitation + "\nWind speed: " + windSpeed + "\nDaily high temperature: " + highTemp + "\nDaily low temperature: " + lowTemp + "\nUV index: " + uvIndex);
  
         /*
         STEP 6: Print the full weather report
@@ -112,7 +112,7 @@ public class Main {
  
  
         // TODO: Output your report using System.out.println()
- 
+        System.out.println(report);
  
         /*
         STEP 7: Optional extra challenge
