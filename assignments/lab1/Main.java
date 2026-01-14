@@ -72,6 +72,7 @@ public class Main {
  
  
         // TODO: Apply typecasting where necessary
+
  
  
         /*
@@ -84,6 +85,15 @@ public class Main {
  
  
         // TODO: Write if, if-else, or nested if statements to display tips
+        if (uvIndex >= 6) {
+            System.out.println("Use sunscreen.");
+        }
+        if (Integer.parseInt(precipitation.replace("%", "")) >= 50) {
+            System.out.println("Carry an umbrella.");
+        }
+        if (Integer.parseInt(windSpeed.replace(" km/h", "")) > 40) {
+            System.out.println("Windy conditions.");
+        }
  
  
         /*
