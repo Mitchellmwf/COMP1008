@@ -43,7 +43,10 @@ public class Lab4 {
         // Remove one item by name or index
         // Print the updated ArrayList
         // ================================================
-        
+        groceryList.add("Orange Juice");
+        groceryList.add("Cauliflower");
+        groceryList.remove("Onions");
+        System.out.println(groceryList);
  
  
  
@@ -52,7 +55,14 @@ public class Lab4 {
         // Hint: vowels = a, e, i, o, u
         // Use .toLowerCase(). startsWith()
         // ============================================ ====
-        
+        int vowelCount = 0;
+        for (String item : groceryList) {
+            item = item.toLowerCase();
+            if (item.startsWith("a") || item.startsWith("e") || item.startsWith("i") || item.startsWith("o") || item.startsWith("u")) {
+                System.out.println(item + " starts with a vowel.");
+                vowelCount++;
+            }
+        }
  
         // ================================================
         // STEP 6: Print the final results
