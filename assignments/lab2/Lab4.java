@@ -67,7 +67,7 @@ public class Lab4 {
         // ================================================
         // STEP 6: Print the final results
         // ================================================
-        
+        System.out.println("Number of items that start with a vowel: " + vowelCount);
     }
 }
  
