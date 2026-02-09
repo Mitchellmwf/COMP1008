@@ -110,7 +110,7 @@ public class main {
         // STEP 6: Enum usage demo
         // Example: Choice userChoice = Choice.ROCK;
         // Example: Choice computerChoice = Choice.SCISSORS;
-        choice userChoice = Choice.ROCK;
+        Choice userChoice = Choice.ROCK;
         Choice computerChoice = Choice.SCISSORS;
         showChoice("User", userChoice);
         showChoice("Computer", computerChoice);
