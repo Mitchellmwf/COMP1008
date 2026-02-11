@@ -22,6 +22,9 @@ public class book {
     }
 
     public void setTitle(String title) {
+        if (title == null || title == "") {
+            throw new IllegalArgumentException("Title cannot be empty");
+        }
         this.title = title;
     }
 
@@ -30,6 +33,9 @@ public class book {
     }
 
     public void setAuthor(String author) {
+        if (title == null || title == "") {
+            throw new IllegalArgumentException("Author cannot be empty");
+        }
         this.author = author;
     }
 
@@ -38,14 +44,24 @@ public class book {
     }
 
     public void setISBN(String isbn) {
+        if (isbn == null || isbn == "" || isbn.length() != 13) {
+            throw new IllegalArgumentException("ISBN cannot be empty and must be 13 characters long");
+        }
         this.isbn = isbn;
     }
 
-    public boolean isAvailable() {
+    public boolean getAvailable() {
         return available;
     }
 
     public void setAvailable(boolean available) {
         this.available = available;
+    }
+
+    public void displayInfo() {
+        System.out.println("Title: " + getTitle());
+        System.out.println("Author: " + getAuthor());
+        System.out.println("ISBN: " + getISBN());
+        System.out.println("Available: " + getAvailable());
     }
 }
