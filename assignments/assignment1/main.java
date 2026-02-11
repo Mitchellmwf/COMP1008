@@ -114,9 +114,9 @@ public class main {
                             System.out.println("This book is currently unavailable.");
                         }
                     }
-                    if (!found) {
-                        System.out.println("Book not found.");
-                    }
+                }
+                if (!found) {
+                    System.out.println("Book not found.");
                 }
             }
             
