@@ -20,22 +20,19 @@ public class main {
 
             //Add book
             if (choice == 1) {
-                System.out.println("Enter the book title:");
-                String title = scanner.nextLine();
+                String title = "";
                 while (title.isEmpty()) {
-                    System.out.println("Title cannot be empty, please enter a title:");
+                    System.out.println("Enter the book title:");
                     title = scanner.nextLine();
                 }
-                System.out.println("Enter the book author:");
-                String author = scanner.nextLine();
+                String author = "";
                 while (author.isEmpty()) {
-                    System.out.println("Author cannot be empty, please enter an author:");
+                    System.out.println("Enter the book author:");
                     author = scanner.nextLine();
                 }
-                System.out.println("Enter the book's ISBN:");
-                String isbn = scanner.nextLine();
+                String isbn = "";
                 while (isbn.isEmpty() || isbn.length() != 13) {
-                    System.out.println("ISBN cannot be empty and must be 13 characters long, please enter a valid ISBN:");
+                    System.out.println("Enter the book's ISBN (13 characters):");
                     isbn = scanner.nextLine();
                 }
                 books.add(new book(title, author, isbn, true));
