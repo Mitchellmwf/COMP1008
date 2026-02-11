@@ -22,19 +22,19 @@ public class main {
             if (choice == 1) {
                 System.out.println("Enter the book title:");
                 String title = scanner.nextLine();
-                while (title.equals("")) {
+                while (title.isEmpty()) {
                     System.out.println("Title cannot be empty, please enter a title:");
                     title = scanner.nextLine();
                 }
                 System.out.println("Enter the book author:");
                 String author = scanner.nextLine();
-                while (author.equals("")) {
+                while (author.isEmpty()) {
                     System.out.println("Author cannot be empty, please enter an author:");
                     author = scanner.nextLine();
                 }
                 System.out.println("Enter the book's ISBN:");
                 String isbn = scanner.nextLine();
-                while (isbn.equals("") || isbn.length() != 13) {
+                while (isbn.isEmpty() || isbn.length() != 13) {
                     System.out.println("ISBN cannot be empty and must be 13 characters long, please enter a valid ISBN:");
                     isbn = scanner.nextLine();
                 }
@@ -73,22 +73,25 @@ public class main {
             else if (choice == 4){
                 System.out.println("What author would you like to search?:");
                 String authorSearch = scanner.nextLine();
-                while (authorSearch.equals("")) {
+                while (authorSearch.isEmpty()) {
                     System.out.println("Author cannot be empty, please enter an author:");
                     authorSearch = scanner.nextLine();
                 }
                 int availableCount = 0;
-                int bookcount = 0;
                 //sort through books and count how many are available and how many total
                 for (book book : books) {
-                    if (book.getAvailable() || book.getAuthor().equals(authorSearch)) {
+                    if (book.getAuthor().equals(authorSearch)) {
                         availableCount++;
                     }
-                    bookcount++;
                 }
 
                 //display results
-                System.out.println("Search Result: " + bookcount + " books, " + availableCount + " available");
+                if (availableCount == 0) {
+                    System.out.println("No books found by that author.");
+                    continue;
+                }
+
+                System.out.println("Search Result: " + availableCount + " available");
                 for (book book : books) {
                     if (book.getAuthor().equals(authorSearch)) {
                         book.displayInfo();
@@ -100,7 +103,7 @@ public class main {
             else if (choice == 5){
                 System.out.println("Which book would you like to check out?:");
                 String titleSearch = scanner.nextLine();
-                while (titleSearch.equals("")) {
+                while (titleSearch.isEmpty()) {
                     System.out.println("Title cannot be empty, please enter a title:");
                     titleSearch = scanner.nextLine();
                 }
@@ -125,7 +128,7 @@ public class main {
             else if (choice == 6){
                 System.out.println("What book are you returning?:");
                 String title = scanner.nextLine();
-                while (title.equals("")) {
+                while (title.isEmpty()) {
                     System.out.println("Title cannot be empty, please enter a title:");
                     title = scanner.nextLine();
                 }
