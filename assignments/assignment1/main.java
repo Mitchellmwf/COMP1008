@@ -7,7 +7,6 @@ public class main {
         Scanner scanner = new Scanner(System.in);
         ArrayList<book> books = new ArrayList<>();
         int choice = 0;
-
         //test books
         books.add(new book("IT", "Steven King", "9780743273565", true));
         books.add(new book("Harry Potter", "JK Rowling", "9780061120084", true));
@@ -20,16 +19,22 @@ public class main {
 
             //Add book
             if (choice == 1) {
+                //clear scanner buffer
+                scanner.nextLine();
                 String title = "";
                 while (title.isEmpty()) {
                     System.out.println("Enter the book title:");
                     title = scanner.nextLine();
                 }
+                //clear scanner buffer
+                scanner.nextLine();
                 String author = "";
                 while (author.isEmpty()) {
                     System.out.println("Enter the book author:");
                     author = scanner.nextLine();
                 }
+                //clear scanner buffer
+                scanner.nextLine();
                 String isbn = "";
                 while (isbn.isEmpty() || isbn.length() != 13) {
                     System.out.println("Enter the book's ISBN (13 characters):");
