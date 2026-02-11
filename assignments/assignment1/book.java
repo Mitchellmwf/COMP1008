@@ -60,9 +60,11 @@ public class book {
 
     //display book info
     public void displayInfo() {
+        System.out.println("");
         System.out.println("Title: " + getTitle());
         System.out.println("Author: " + getAuthor());
         System.out.println("ISBN: " + getISBN());
         System.out.println("Available: " + getAvailable());
+        
     }
 }

@@ -8,6 +8,11 @@ public class main {
         ArrayList<book> books = new ArrayList<>();
         int choice = 0;
 
+        //test books
+        books.add(new book("IT", "Steven King", "9780743273565", true));
+        books.add(new book("Harry Potter", "JK Rowling", "9780061120084", true));
+        books.add(new book("1984", "George Orwell", "9780451524935", true));
+
         //Menu
         while (choice != 7) {
             System.out.println("What would you like to do? (1: Add book, 2: Display books, 3: Display avaiable books, 4: Search by Author, 5: Check a book out, 6: Return a book, 7: Exit)");
@@ -17,10 +22,22 @@ public class main {
             if (choice == 1) {
                 System.out.println("Enter the book title:");
                 String title = scanner.nextLine();
+                while (title.equals("")) {
+                    System.out.println("Title cannot be empty, please enter a title:");
+                    title = scanner.nextLine();
+                }
                 System.out.println("Enter the book author:");
                 String author = scanner.nextLine();
+                while (author.equals("")) {
+                    System.out.println("Author cannot be empty, please enter an author:");
+                    author = scanner.nextLine();
+                }
                 System.out.println("Enter the book's ISBN:");
                 String isbn = scanner.nextLine();
+                while (isbn.equals("") || isbn.length() != 13) {
+                    System.out.println("ISBN cannot be empty and must be 13 characters long, please enter a valid ISBN:");
+                    isbn = scanner.nextLine();
+                }
                 books.add(new book(title, author, isbn, true));
             }
 
@@ -56,6 +73,10 @@ public class main {
             else if (choice == 4){
                 System.out.println("What author would you like to search?:");
                 String authorSearch = scanner.nextLine();
+                while (authorSearch.equals("")) {
+                    System.out.println("Author cannot be empty, please enter an author:");
+                    authorSearch = scanner.nextLine();
+                }
                 int availableCount = 0;
                 int bookcount = 0;
                 //sort through books and count how many are available and how many total
@@ -78,15 +99,24 @@ public class main {
             //Check out a book
             else if (choice == 5){
                 System.out.println("Which book would you like to check out?:");
-                String title = scanner.nextLine();
+                String titleSearch = scanner.nextLine();
+                while (titleSearch.equals("")) {
+                    System.out.println("Title cannot be empty, please enter a title:");
+                    titleSearch = scanner.nextLine();
+                }
+                boolean found = false;
                 for (book book : books) {
-                    if (book.getTitle().equals(title)) {
+                    if (book.getTitle().equals(titleSearch)) {
                         if (book.getAvailable()) {
                             book.setAvailable(false);
+                            found = true;
                             System.out.println("Enjoy your book!");
                         } else {
                             System.out.println("This book is currently unavailable.");
                         }
+                    }
+                    if (!found) {
+                        System.out.println("Book not found.");
                     }
                 }
             }
@@ -95,6 +125,10 @@ public class main {
             else if (choice == 6){
                 System.out.println("What book are you returning?:");
                 String title = scanner.nextLine();
+                while (title.equals("")) {
+                    System.out.println("Title cannot be empty, please enter a title:");
+                    title = scanner.nextLine();
+                }
                 for (book book : books) {
                     if (book.getTitle().equals(title)) {
                         book.setAvailable(true);
