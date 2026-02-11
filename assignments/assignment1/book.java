@@ -58,6 +58,7 @@ public class book {
         this.available = available;
     }
 
+    //display book info
     public void displayInfo() {
         System.out.println("Title: " + getTitle());
         System.out.println("Author: " + getAuthor());
