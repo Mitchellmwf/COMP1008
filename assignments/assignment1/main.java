@@ -19,22 +19,16 @@ public class main {
 
             //Add book
             if (choice == 1) {
-                //clear scanner buffer
-                scanner.nextLine();
                 String title = "";
                 while (title.isEmpty()) {
                     System.out.println("Enter the book title:");
                     title = scanner.nextLine();
                 }
-                //clear scanner buffer
-                scanner.nextLine();
                 String author = "";
                 while (author.isEmpty()) {
                     System.out.println("Enter the book author:");
                     author = scanner.nextLine();
                 }
-                //clear scanner buffer
-                scanner.nextLine();
                 String isbn = "";
                 while (isbn.isEmpty() || isbn.length() != 13) {
                     System.out.println("Enter the book's ISBN (13 characters):");
