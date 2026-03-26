@@ -1,0 +1,19 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "JavaFXLearningActivity",
+      "request": "launch",
+      "mainClass": "JavaFXLearningActivity",
+      "projectName": "java_2a8bd51f"
+    },
+    {
+      "type": "java",
+      "name": "Run JavaFX",
+      "request": "launch",
+      "mainClass": "lessons.week11.JavaFXLearningActivity",
+      "vmArgs": "--module-path 'C:/Java/javafx-sdk-26/lib' --add-modules javafx.controls"
+    }
+  ]
+}
