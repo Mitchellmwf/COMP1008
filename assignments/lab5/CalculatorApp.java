@@ -32,7 +32,7 @@ public class CalculatorApp extends Application {
        
         // Step 5: VBox main layout
         VBox mainLayout = new VBox(10);
-        mainLayout.getChildren().addAll(input1, input2 buttonBox, resultLabel);
+        mainLayout.getChildren().addAll(input1, input2, buttonBox, resultLabel);
 
         // Step 6: Event handling for buttons
         addBtn.setOnAction(e -> {
@@ -47,7 +47,7 @@ public class CalculatorApp extends Application {
         divBtn.setOnAction(e -> {
             double num2 = Double.parseDouble(input2.getText());
             if (num2 == 0) {
-                resultLabel.setText("Results: Cannot divide by zero");
+                resultLabel.setText("Divide by zero error");
             } else {
                 resultLabel.setText("Results: " + (Double.parseDouble(input1.getText()) / num2));
             }
