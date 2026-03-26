@@ -32,12 +32,31 @@ public class CalculatorApp extends Application {
        
         // Step 5: VBox main layout
         VBox mainLayout = new VBox(10);
-        mainLayout.getChildren().addAll(input1, input2, buttonBox, resultLabel);
-        
+        mainLayout.getChildren().addAll(input1, input2 buttonBox, resultLabel);
+
         // Step 6: Event handling for buttons
-       
+        addBtn.setOnAction(e -> {
+            resultLabel.setText("Results: " + (Double.parseDouble(input1.getText()) + Double.parseDouble(input2.getText())));
+        });
+        subBtn.setOnAction(e -> {
+            resultLabel.setText("Results: " + (Double.parseDouble(input1.getText()) - Double.parseDouble(input2.getText())));
+        });
+        mulBtn.setOnAction(e -> {
+            resultLabel.setText("Results: " + (Double.parseDouble(input1.getText()) * Double.parseDouble(input2.getText())));
+        });
+        divBtn.setOnAction(e -> {
+            double num2 = Double.parseDouble(input2.getText());
+            if (num2 == 0) {
+                resultLabel.setText("Results: Cannot divide by zero");
+            } else {
+                resultLabel.setText("Results: " + (Double.parseDouble(input1.getText()) / num2));
+            }
+        });
+
         // Step 7: Create scene and show stage
-       
+        Scene scene = new Scene(mainLayout, 350, 250);
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
  
     public static void main(String[] args) {
